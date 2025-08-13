@@ -1,6 +1,7 @@
 
 import './App.css'
 import CounterApp from './CounterApp'
+import Home from './Home'
 import Navbar from './Navbar'
 
 
@@ -40,6 +41,8 @@ function App() {
       </script> */}
      
       {/* <h1>This is my first webpage</h1> */}
+
+      {/* <Home/> */}
     </>
   )
 }
