@@ -5,8 +5,8 @@ import Display from './Display'
 const App = () => {
   return (
     <div>
-        {/* <ExpenseTracker/> */}
-        <Display/>
+        <ExpenseTracker/>
+        {/* <Display/> */}
     </div>
   )
 }

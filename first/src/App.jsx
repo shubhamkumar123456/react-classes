@@ -1,5 +1,6 @@
 
 import './App.css'
+import ConditionalRendering from './ConditionalRendering'
 import CounterApp from './CounterApp'
 import Home from './Home'
 import Navbar from './Navbar'
@@ -23,8 +24,8 @@ function App() {
 
   return (
     <>
-    
-    <CounterApp/>
+    <ConditionalRendering/>
+    {/* <CounterApp/> */}
       {/* <Navbar/>
       <h1 id='one'></h1>
 
