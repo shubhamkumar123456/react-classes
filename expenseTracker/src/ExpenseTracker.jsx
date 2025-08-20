@@ -8,38 +8,47 @@ const ExpenseTracker = () => {
     let placeRef = useRef()
     let dateRef = useRef()
   
-    
+    const [showUpdateBtn, setshowUpdateBtn] = useState(false);
 
     const [arr, setArr] = useState([
         {
             id: 1,
             credited: 35000,
-            date: "01-08-2025",
+            date: "2025-08-01",
             debited: 0,
             place: 'salary'
         },
         {
             id: 2,
             credited: 1500,
-            date: "05-08-2025",
+            date: "2025-08-05",
             debited: 0,
             place: 'bua ke ghar'
         },
         {
             id: 3,
             credited: 0,
-            date: "05-08-2025",
+            date: "2025-08-05",
             debited: 1000,
             place: 'dinner'
         },
         {
             id: 4,
             credited: 0,
-            date: "06-08-2025",
+            date: "2025-08-06",
             debited: 300,
             place: 'zoo'
         },
     ])
+
+    console.log(arr)
+
+    let totalCredited = 0;
+    for(let val of arr){
+        // console.log(val.credited)
+        totalCredited= totalCredited+Number(val.credited)
+    }
+    console.log(totalCredited)
 
     function handleDelete(obj, i){
         console.log(obj)
@@ -75,6 +84,7 @@ const ExpenseTracker = () => {
         // console.log("hello")
        
         let obj = {
+            id:arr.length+1,
             credited:creditRef.current.value,
             debited:debitRef.current.value,
             place:placeRef.current.value,
@@ -91,23 +101,81 @@ const ExpenseTracker = () => {
 
     
         setArr(copyArr)
+
+        creditRef.current.value = ''
+        debitRef.current.value = ''
+        placeRef.current.value = ''
+        dateRef.current.value = ''
         // arr.push(obj);
         // console.log(arr)
     }
 
+
+    const [selectedIndex, setselectedIndex] = useState('');
+    console.log(selectedIndex);
+
+
+    const handleUpdate=(obj ,index)=>{
+        setshowUpdateBtn(true)
+        // console.log(obj)
+        // console.log(index)
+        setselectedIndex(index);
+
+        creditRef.current.value = obj.credited;
+        debitRef.current.value = obj.debited;
+        placeRef.current.value = obj.place;
+        dateRef.current.value =   obj.date;
+
+    }
+
+    const handleUpdateExpense = (e)=>{
+        e.preventDefault()
+        console.log(selectedIndex)  //1
+        
+        let obj = {
+            id:selectedIndex+1,
+            credited:creditRef.current.value,
+            debited:debitRef.current.value,
+            place:placeRef.current.value,
+            date:dateRef.current.value,
+        }
+        
+        let copyArr = [...arr];  //[{},{},{},{}]
+        copyArr[selectedIndex] = obj;
+        setArr(copyArr)
+        
+         creditRef.current.value = ''
+        debitRef.current.value = ''
+        placeRef.current.value = ''
+        dateRef.current.value = ''
+        setshowUpdateBtn(false)
+
+        
+
+         
+    }
+
+
+    let arr1 = [10, 4,5, 9];
+    arr1[2] = 3;
+   
     return (
         <div className='expensePage'>
             <h1 className='title'>This is Expense Tracker Application</h1>
 
-            <form action="">
-                <input ref={creditRef} id='credit' type="number" placeholder='credit amount' />
-                <input ref={debitRef} id='debit' type="number" placeholder='debit amount' />
-                <input ref={placeRef} id='place' type="text" placeholder='Place' />
-                <input ref={dateRef} id='date' type="date" placeholder='date' />
-                <button onClick={handleSubmit}>Add Expense</button>
+            <form style={{margin:"auto",backgroundColor:"black",padding:"10px",borderRadius:"10px",width:'max-content',display:"flex",alignItems:"center",gap:"20px"}} action="">
+                <input style={{padding:"10px",borderRadius:"5px"}} ref={creditRef} id='credit' type="number" placeholder='credit amount' />
+                <input style={{padding:"10px",borderRadius:"5px"}} ref={debitRef} id='debit' type="number" placeholder='debit amount' />
+                <input style={{padding:"10px",borderRadius:"5px"}} ref={placeRef} id='place' type="text" placeholder='Place' />
+                <input style={{padding:"10px",borderRadius:"5px"}} ref={dateRef} id='date' type="date" placeholder='date' />
+               {showUpdateBtn===false ? <button onClick={handleSubmit}>Add Expense</button> :
+                <button onClick={handleUpdateExpense}>Update Expense</button>}
             </form>
 
-            <table border={1} cellPadding={'10px'}>
+         {
+            arr.length >0 ?
+           <div className='tableBox'>
+             <table border={1} cellPadding={'10px'}>
                 <thead>
                     <tr>
                         <th>Sno</th>
@@ -128,11 +196,23 @@ const ExpenseTracker = () => {
                         <td>{obj.debited ===''?0 :obj.debited}</td>
                         <td>{obj.place}</td>
                         <td>{obj.date}</td>
-                        <td><button onClick={()=>handleDelete(obj,i)}>delete</button></td>
+                        <td>
+                            <button onClick={()=>handleDelete(obj,i)}>delete</button>
+                            <button onClick={()=>handleUpdate(obj, i)}>Update</button>
+                        </td>
                     </tr>
                         })
                     }
 
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                       
+                    </tr>
                     {/* <tr>
                         <td>1</td>
                         <td>{arr[0].credited}</td>
@@ -151,6 +231,12 @@ const ExpenseTracker = () => {
                     </tr> */}
                 </tbody>
             </table>
+           </div>
+           :
+            <h1>No Transaction</h1>
+           }
+
+            <h1>Total Credited =  {totalCredited}</h1>
         </div>
     )
 }

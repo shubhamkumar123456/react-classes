@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>12345</h1>
+
+    <input type="number" placeholder="enter any num">
+    <button onclick="handleCLick()">click me</button>
+    <script>
+        let h1 = document.querySelector('h1');
+        console.log(h1)
+        console.log(typeof h1)
+        console.log(typeof h1.innerHTML)
+
+        let inputTag = document.querySelector('input')
+        function handleCLick(){
+            console.log(inputTag)
+            console.log(Number(inputTag.value) + 8888)
+            console.log(typeof inputTag.value )
+        }
+        
+
+    </script>
+</body>
+</html>

@@ -17,3 +17,21 @@
 .expensePage td, .expensePage th{
   padding: 15px;
 }
+
+.tableBox{
+  height: 350px;
+  /* background-color: aqua; */
+  overflow-y: auto;
+  width: max-content;
+  margin: auto;
+}
+.tableBox table{
+ 
+  margin-top: 50px;
+}
+
+table button{
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
