@@ -7,10 +7,10 @@
 // a) npm create vite@latest
 
 
-// React Js --> It is frontend javascript library used to build user Interface specially for single page application. it uses component based approach
+// React Js --> It is frontend javascript library used to building user Interface specially for single page application. it uses component based approach
 
 
-// component --> it a small piece of code that can be reusable; a component can be declared using two way function or class based;
+// component --> it a small piece of code that can be reusable; a component can be declared using two way function or class based and can include html css and javascript code init;
 
 // functional component  --> are similar like functions in javascript. but here functional component return a react element. and can include html css and javascript code
 
@@ -30,6 +30,8 @@
 // How Browser understand JSX???
 // browser can not understand JSX it can understand only javascript object so to need browser to understand jsx we need to convert jsx into regular javascript object with the help of transformer like babel and then pass it to the browser
 
+
+// useEffect hook --> useEffect hook is used to run side effect such as updating the Dom element , fetching api, etc . it takes two argument, a  callback function and a array of dependency . if array of dependency is blank useEffect will run only one time
 
 
 

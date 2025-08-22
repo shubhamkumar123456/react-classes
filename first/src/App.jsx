@@ -2,7 +2,9 @@
 import './App.css'
 import ConditionalRendering from './ConditionalRendering'
 import CounterApp from './CounterApp'
+import EffectHookPractice from './EffectHookPractice'
 import Home from './Home'
+import Home1 from './Home1'
 import Navbar from './Navbar'
 
 
@@ -24,7 +26,10 @@ function App() {
 
   return (
     <>
-    <ConditionalRendering/>
+
+    {/* <EffectHookPractice/> */}
+    <Home1/>
+    {/* <ConditionalRendering/> */}
     {/* <CounterApp/> */}
       {/* <Navbar/>
       <h1 id='one'></h1>
