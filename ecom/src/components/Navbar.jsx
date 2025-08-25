@@ -11,10 +11,10 @@ const Navbar = () => {
 
     }
   return (
-    <div>
+    <div className='bg-yellow-200 h-[70px] items-center justify-between flex px-7 '>
       {/* <h1>This is Navbar</h1> */}
       <h1>Webite</h1>
-      <ul>
+      <ul className='flex gap-7'>
         {/* <li><a href="/">Home</a></li>
         <li><a href="/xyz">Login</a></li>
         <li><a href="/abc">Signup</a></li> */}
