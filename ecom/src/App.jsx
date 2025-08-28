@@ -7,22 +7,24 @@ import Home from './pages/Home'
 import PNF from './pages/PNF'
 import Navbar from './components/Navbar'
 import FormState from './pages/FormState'
+import ViewDetails from './pages/ViewDetails'
 
 const App = () => {
   return (
     <div>
-       {/* <BrowserRouter>
+       <BrowserRouter>
        <Navbar/>
             <Routes>
                 <Route path='/'  element ={<Home/>}/>
                 <Route path='/xyz'  element ={<Login/>}/>
                 <Route path='/abc'  element ={<Signup/>}/>
+                <Route path='/view'  element ={<ViewDetails/>}/>
                 <Route path='/*'  element ={<PNF/>}/>
             </Routes>
-       </BrowserRouter> */}
+       </BrowserRouter>
 
       
-      <FormState/>
+      {/* <FormState/> */}
     </div>
   )
 }
