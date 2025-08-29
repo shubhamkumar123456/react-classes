@@ -36,6 +36,14 @@
 
 // useNavigate hook --> similar like window.location.href or <Link> tag
 
+// props --> props are used to pass data from parent component to child component these are read only you can not change the value of props.
+
+// 1) parent to child data transfer
+// 2)child to parent data transfer
+// 3)child to child data transfer
+
+// **Question --> can we pass Data from child to parent using props??
+
 
 
 // whenever you open your webpage on browser it creates a DOM of the webpage
