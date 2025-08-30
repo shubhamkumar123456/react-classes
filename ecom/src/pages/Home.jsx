@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { Link } from 'react-router-dom';
+import CategorySlider from '../components/CategorySlider';
 
 const Home = () => {
   const [products, setproducts] = useState([]);
@@ -13,11 +14,29 @@ const Home = () => {
     setproducts(data.products)
   }
 
+
+  let mobiles = products.filter((ele)=>ele.category==='smartphones'); //[]
+  let laptops = products.filter((ele)=>ele.category==='laptops'); //[]
+  console.log(mobiles)
+  console.log(laptops)
+
+
+
 useEffect(()=>{
   getData()
 },[])
   return (
     <div className='p-5'>
+      <div className='bg-black text-white h-[300px] p-5 mb-5'>
+      <h1 className='mb-3 underline'>SmartPhones</h1>
+        <CategorySlider data = {mobiles}/>
+      </div>
+      <div className='bg-black text-white h-[300px] p-5 mb-5'>
+      <h1 className='mb-3 underline'>Laptops</h1>
+        <CategorySlider data = {laptops}/>
+      </div>
+
+
         <div className='grid lg:grid-cols-4 gap-2 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 '>
           {
           products.map((ele, i)=>{
