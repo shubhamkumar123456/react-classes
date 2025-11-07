@@ -25,7 +25,7 @@
 // useState()-->  it is a hook used to store the value and can also be used to re-render of component. it takes a array of two argument a variable and a function. variable is used to store the value. and function is used to update the value of variable. 
 // NOTE--> whenever you call the update function it will rerender the component 
 
-// useRef Hook  --> it is used to copy the memory address of any react element . it can directly manipulate the (DOM) Document object model without re-rendering of component
+// useRef Hook  --> it is used to copy the memory address of any react element . it can directly manipulate the (DOM) Document object model without re-rendering of component (iski help se aap kisi bhi element( tag) ko copy kr skte ho use get kr skte ho)
 
 // How Browser understand JSX???
 // browser can not understand JSX it can understand only javascript object so to need browser to understand jsx we need to convert jsx into regular javascript object with the help of transformer like babel and then pass it to the browser

@@ -1,0 +1,48 @@
+.expenseTracker1 .title{
+    text-align: center;
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+
+.expenseTracker1 table{
+    border:1px solid;
+    width: 80%;
+    margin: auto;
+}
+.expenseTracker1 table td, .expenseTracker1 table th{
+    border:1px solid;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.expenseTracker1 form{
+    background-color: orange;
+    width: max-content;
+    padding: 10px;
+    margin:20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 13px;
+}
+
+.expenseTracker1 form input{
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    outline:none
+}
+.expenseTracker1 form #btnSubmit{
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+}
+.expenseTracker1 form #btnUpdateExpense{
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+}
