@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    border: 1px solid white;
+    height: 65px;
+}
+
+.navbar ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+.navbar ul a{
+    color: white;
+    text-decoration: none;
+}
+
+.formPage{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 350px;
+    background-color: burlywood;
+    padding: 20px;
+    margin: 50px auto;
+}
+
+.passwordBox{
+    position: relative;
+}
+.passwordBox input{
+    width: 100%;
+}
+#eyeIcon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.formPage input{
+    padding: 10px;
+}

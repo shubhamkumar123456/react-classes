@@ -1,12 +1,13 @@
 
 import './App.css'
-import ConditionalRendering from './ConditionalRendering'
-import CounterApp from './CounterApp'
-import EffectHookPractice from './EffectHookPractice'
-import Home from './Home'
-import Home1 from './Home1'
-import Navbar from './Navbar'
-
+import ConditionalRendering from './pages/ConditionalRendering'
+import CounterApp from './pages/CounterApp'
+import EffectHookPractice from './pages/EffectHookPractice'
+import Home from './pages/Home'
+import Home1 from './pages/Home1'
+import Navbar from './components/Navbar'
+import { BrowserRouter, Routes , Route } from 'react-router-dom'
+import Form from './pages/Form'
 
 // normal function
 // function xyz(){
@@ -27,8 +28,21 @@ function App() {
   return (
     <>
 
+    <BrowserRouter>
+        <Navbar/>
+        <Routes>
+            <Route path='/'  element={<Home1/>}/>
+            <Route path='/effect'  element={<EffectHookPractice/>}/>
+            <Route path='/conditional'  element={<ConditionalRendering/>}/>
+            <Route path='/counter'  element={<CounterApp/>}/>
+            <Route path='/home'  element={<Home/>}/>
+            <Route path='/form' element={<Form/>}/>
+        </Routes>
+    </BrowserRouter>
+
+
     {/* <EffectHookPractice/> */}
-    <Home1/>
+    {/* <Home1/> */}
     {/* <ConditionalRendering/> */}
     {/* <CounterApp/> */}
       {/* <Navbar/>
