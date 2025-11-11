@@ -8,6 +8,9 @@ import Home1 from './pages/Home1'
 import Navbar from './components/Navbar'
 import { BrowserRouter, Routes , Route } from 'react-router-dom'
 import Form from './pages/Form'
+import Form1 from './pages/Form1'
+import Effect1 from './pages/Effect1'
+import ApiFetch from './pages/ApiFetch'
 
 // normal function
 // function xyz(){
@@ -31,12 +34,14 @@ function App() {
     <BrowserRouter>
         <Navbar/>
         <Routes>
-            <Route path='/'  element={<Home1/>}/>
+            <Route path='/'  element={<ApiFetch/>}/>
             <Route path='/effect'  element={<EffectHookPractice/>}/>
             <Route path='/conditional'  element={<ConditionalRendering/>}/>
             <Route path='/counter'  element={<CounterApp/>}/>
             <Route path='/home'  element={<Home/>}/>
             <Route path='/form' element={<Form/>}/>
+            <Route path='/form1' element={<Form1/>}/>
+            <Route path='/effect1' element={<Effect1/>}/>
         </Routes>
     </BrowserRouter>
 

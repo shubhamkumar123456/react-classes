@@ -12,6 +12,9 @@ function Navbar(){
         if(e.target.value === 'Form using useRef' ){
             navigate('/form')
         }
+        else if(e.target.value === 'Form using onChange'){
+            navigate('/form1')
+        }
 
     }
     return(
@@ -21,7 +24,7 @@ function Navbar(){
             <select onChange={handleSelect} ref={selectRef} name="" id="">
                 <option value="">Select page</option>
                 <option value="Form using useRef">Form using useRef</option>
-                <option value="option 2">option 2</option>
+                <option value="Form using onChange">Form using onChange</option>
                 <option value="ption 3">option 3</option>
             </select>
 

@@ -34,7 +34,7 @@
 // useEffect hook --> useEffect hook is used to run side effect such as updating the Dom element , fetching api, etc . it takes two argument, a  callback function and a array of dependency . if array of dependency is blank useEffect will run only one time
 
 
-// useNavigate hook --> similar like window.location.href or <Link> tag
+// useNavigate hook --> similar like window.location.href or <Link> tag, is used to navigate from one page to another page
 
 // props --> props are used to pass data from parent component to child component these are read only you can not change the value of props.
 
