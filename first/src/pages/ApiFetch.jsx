@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 const ApiFetch = () => {
 
+    let navigate = useNavigate();
     const [allRecipies, setallRecipies] = useState([]);  // []  , [{},{}]
     console.log(allRecipies) // [] , [{},{},{}]
 
@@ -18,6 +20,14 @@ const ApiFetch = () => {
     useEffect(()=>{
         getRecipes()
     },[])
+
+
+    // function handleView(obj, i){
+    //   console.log(obj)
+    //   console.log(i)
+    //   navigate('/view', {state:obj})
+    // }
+
   return (
     <div className='px-5'>
       <h1>This is Api Page</h1>
@@ -25,10 +35,12 @@ const ApiFetch = () => {
        <div className=' grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4'>
          {
             allRecipies.map((obj, i)=>{
-                return <div className='bg-[#f0e89b] p-3 rounded-md text-center flex gap-3 flex-col'>
+                return <div key={obj.id} className='bg-[#f0e89b] p-3 rounded-md text-center flex gap-3 flex-col'>
                     <img src={obj.image} alt="" />
                     <h3>{obj.name}</h3>
-                    <button className='bg-green-950 text-white hover:bg-green-700'>View Recipe</button>
+                    {/* <button onClick={()=>handleView(obj,i)} className='bg-green-950 text-white hover:bg-green-700'>View Recipe</button> */}
+
+                    <Link to={'/view'} state={obj} className='bg-green-950 text-white hover:bg-green-700'>View Recipe</Link>
                 </div>
             })
         }

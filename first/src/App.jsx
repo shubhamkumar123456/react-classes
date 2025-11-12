@@ -11,6 +11,7 @@ import Form from './pages/Form'
 import Form1 from './pages/Form1'
 import Effect1 from './pages/Effect1'
 import ApiFetch from './pages/ApiFetch'
+import ViewRecipe from './pages/ViewRecipe'
 
 // normal function
 // function xyz(){
@@ -42,6 +43,7 @@ function App() {
             <Route path='/form' element={<Form/>}/>
             <Route path='/form1' element={<Form1/>}/>
             <Route path='/effect1' element={<Effect1/>}/>
+            <Route path='/view' element={<ViewRecipe/>}/>
         </Routes>
     </BrowserRouter>
 
