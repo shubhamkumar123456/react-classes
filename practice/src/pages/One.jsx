@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Trial from '../components/Trial'
+import CHildComponent from '../components/CHildComponent'
 
 export function XYZ(props){
   console.log(props)
@@ -29,6 +30,8 @@ const One = () => {
 
     <XYZ x='10' y='my name is jhon'/>
     <Trial color={'red'} text="One,, Hii all is not well"/>
+
+    <CHildComponent x={'red'} data={20} title={"one component"}/>
     </div>
   )
 }
