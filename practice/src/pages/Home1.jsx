@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CHildComponent from '../components/CHildComponent'
 import Child1 from '../components/Child1'
 
-const Home1 = () => {
+const Home1 = (props) => {
     let x = 10
     const [value, setvalue] = useState('');
     function getData(a){
@@ -12,6 +12,11 @@ const Home1 = () => {
   return (
     <div>
       <h1>THis is Home page</h1>
+      {
+        props.arr.map((ele,i)=>{
+          return <h3 key={ele}>{ele}</h3>
+        })
+      }
       <h3>Name = {value.name}</h3>
       <h3>Name = {value.age}</h3>
       <h3>Name = {value.course}</h3>

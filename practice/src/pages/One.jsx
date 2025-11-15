@@ -1,10 +1,13 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import Trial from '../components/Trial'
 import CHildComponent from '../components/CHildComponent'
 
 export function XYZ(props){
-  console.log(props)
+  console.log(props)  //{abc:function}
+
+
+
    return <div style={{backgroundColor:"lightgreen"}}>
       <h1>I am child component</h1>
       <h3>{props.x}</h3>
@@ -14,10 +17,15 @@ export function XYZ(props){
 
 
 
-const One = () => {
+const One = (props) => {
   let location = useLocation();
   console.log(location)
 
+  let arr = [10, 12,11,9]
+  
+  useEffect(()=>{
+    props.abc(arr)
+  },[])
 
   return (
     <div>
@@ -32,6 +40,7 @@ const One = () => {
     <Trial color={'red'} text="One,, Hii all is not well"/>
 
     <CHildComponent x={'red'} data={20} title={"one component"}/>
+    <Link to={'/'}>Home1</Link>
     </div>
   )
 }
