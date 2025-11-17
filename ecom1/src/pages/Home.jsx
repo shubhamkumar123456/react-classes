@@ -19,8 +19,30 @@ const Home = () => {
 
     let smartPhones = allProducts.filter((ele)=>ele.category==='smartphones')
     let laptops = allProducts.filter((ele)=>ele.category==="laptops");
-    console.log(laptops)
-    console.log(smartPhones)
+    // console.log(laptops)
+    // console.log(smartPhones)
+
+    // Pagination Code start here
+    const [currentPage, setcurrentPage] = useState(1);
+    let itemPerPage = 10;
+    let lastIndex = itemPerPage * currentPage;
+    let firstIndex = lastIndex - itemPerPage;
+    let slicedArr = allProducts.slice(firstIndex, lastIndex);
+    console.log(slicedArr)
+    let totalBtn = Math.ceil(allProducts.length /itemPerPage)
+    console.log(totalBtn)   //
+
+    let btnArr =[];
+    for(let i=1; i<=totalBtn; i++){
+      btnArr.push(i)
+    } 
+    console.log(btnArr)
+
+    function handleNext(){
+      if(currentPage< totalBtn){
+        setcurrentPage(currentPage+1)
+      }
+    }
   return (
     <div>
        <div className='bg-black my-10 text-white p-4 w-[95%] mx-auto'>
@@ -35,8 +57,8 @@ const Home = () => {
 
       <div className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 grid-cols-1 w-[90%] m-auto'>
         {
-          allProducts.map((ele, i)=>{
-            return <div className='border-gray-400 p-5 gap-3  bg-amber-200 flex flex-col justify-between items-center rounded-lg'>
+          slicedArr.map((ele, i)=>{
+            return <div key={ele.id} className='border-gray-400 p-5 gap-3  bg-amber-200 flex flex-col justify-between items-center rounded-lg'>
                 <img src={ele.thumbnail} alt="" />
                 <h3>{ele.title}</h3>
                 <Link to={'/view'} state={ele} className='bg-green-950 cursor-pointer hover:bg-green-700 text-white  w-full px-4 py-2 rounded-md text-center'>View Details</Link>
@@ -44,6 +66,17 @@ const Home = () => {
             </div>
           })
         }
+      </div>
+
+      <div className='flex flex-wrap justify-center gap-1 my-5'>
+        <button className='px-2 py-1 rounded cursor-pointer bg-green-950 text-white hover:bg-green-700'>Prev</button>
+        {
+          btnArr.map((item, i)=>{
+            return <button className='px-2 py-1 rounded cursor-pointer bg-green-950 text-white hover:bg-green-700'>{item}</button>
+          })
+        }
+
+        <button onClick={handleNext} className='px-2 py-1 rounded cursor-pointer bg-green-950 text-white hover:bg-green-700'>Next</button>
       </div>
 
     </div>
