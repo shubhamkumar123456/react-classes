@@ -5,7 +5,7 @@ import { CiShoppingCart } from "react-icons/ci";
 
 const Navbar = () => {
   return (
-    <div className='flex items-center justify-between px-10 h-[65px] bg-red-300 '>
+    <div className='flex z-50 fixed top-0 left-0 right-0 items-center justify-between px-10 h-[65px] bg-red-300 '>
       <h1>Website</h1>
       <ul className='flex items-center gap-10'>
         <li className='flex items-center'><MdHome/> <Link to={'/'}>Home</Link> </li>

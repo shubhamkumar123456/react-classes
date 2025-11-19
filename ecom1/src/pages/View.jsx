@@ -3,12 +3,12 @@ import { useLocation } from 'react-router-dom'
 
 const View = () => {
   let location = useLocation();
-  console.log(location)
+  // console.log(location)
   let obj = location.state
   console.log(obj)
 
   const [selectedImage, setselectedImage] = useState('');
-  console.log(selectedImage)  //'' , 'awdawd'
+  // console.log(selectedImage)  //'' , 'awdawd'
 
   function handleImage(src){
     console.log(src)
