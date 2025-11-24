@@ -36,6 +36,8 @@ const View = () => {
             <h3><b>Rating : </b> {obj.rating}</h3>
             <h3><b>Return Policy : </b> {obj.returnPolicy}</h3>
             <h3>{obj.description}</h3>
+
+            <button className='bg-green-900 text-white py-2 px-4 rounded-md hover:bg-green-600 w-max my-2 block'>Add to Cart</button>
           </div>
       </div>
 
