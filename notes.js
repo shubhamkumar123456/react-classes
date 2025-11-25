@@ -44,6 +44,11 @@
 
 // **Question --> can we pass Data from child to parent using props??
 
+// context Api -->with the help of context api you can create a global variable. context api is feature in react that lets you share data between components without passing props manualy at each level.(with the help of context api you can avoid props chaining);
+
+
+
+
 
 
 // whenever you open your webpage on browser it creates a DOM of the webpage
