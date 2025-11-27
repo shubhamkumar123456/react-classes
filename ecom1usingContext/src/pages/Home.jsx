@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import SiderComponent from '../components/SiderComponent';
+import CartContext from '../context/CartContext';
 
 const Home = () => {
   const [allProducts, setallProducts] = useState([]);  //[{},{},..194]
   console.log(allProducts)
+
+  let ctx = useContext(CartContext);
+  console.log(ctx)  //{cartArr, setCartArr, getItem}
+
     async function getData(){
       let res = await fetch('https://dummyjson.com/products?skip=0&limit=0');
       let data = await res.json();
@@ -53,6 +58,9 @@ const Home = () => {
 
     function handleAddToCart(obj){
         // props.recieveItem(obj)
+        // console.log(obj)
+        ctx.getItem(obj)
+
     }
 
    useEffect(() => {
