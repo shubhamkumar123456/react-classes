@@ -48,7 +48,20 @@
 
 
 
+// useReducer hook --> it is an alternative of useState hook  . it have a reducers function , a state and a dispatch function
+
+// state -->state is a simple current data that your component is holding and using to render
+// dispatch -->it is a function. with the help of dispatch function we do a request to update the state. you call the dispatch function and pass it an action object  ( it tells what need to happen what you want to do the action);
+
+// reducers function -->  it is a function take two argument state, action its job is to look action and return a new state
 
 
+// Redux  --> redux is  state management library used in javascrvipt application that helps you store and manage data in one place
+
+// action
+// dispatch
+
+
+// redux tool kit --> 
 
 // whenever you open your webpage on browser it creates a DOM of the webpage
