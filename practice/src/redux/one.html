@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea onkeyup="handleClick(event)" name="" maxlength="200" id=""></textarea>
+
+    <h1>Count : <span id="counter">0</span> / 200</h1>
+
+    <script>
+        function handleClick(e){
+            console.log(e.target.value.length)
+            document.getElementById('counter').innerHTML = e.target.value.length
+        }
+    </script>
+</body>
+</html>
