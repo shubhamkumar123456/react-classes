@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Trial from '../components/Trial'
 import CHildComponent from '../components/CHildComponent'
+import ThemeState from '../../Context/ThemeState'
 
 export function XYZ(props){
   console.log(props)  //{abc:function}
@@ -28,6 +29,7 @@ const One = (props) => {
   },[])
 
   return (
+    <ThemeState>
     <div>
       <h1>This is one page</h1>
    {location.state && <div>
@@ -42,6 +44,7 @@ const One = (props) => {
     <CHildComponent x={'red'} data={20} title={"one component"}/>
     <Link to={'/'}>Home1</Link>
     </div>
+    </ThemeState>
   )
 }
 

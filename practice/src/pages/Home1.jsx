@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import CHildComponent from '../components/CHildComponent'
 import Child1 from '../components/Child1'
 
 const Home1 = (props) => {
+  console.log("hello")
     let x = 10
     const [value, setvalue] = useState('');
     function getData(a){
@@ -26,4 +27,4 @@ const Home1 = (props) => {
   )
 }
 
-export default Home1
+export default memo(Home1)

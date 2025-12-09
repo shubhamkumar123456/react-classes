@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteTask } from '../redux/DataSlice';
+import ThemeState from '../../Context/ThemeState';
 
 const ReduxTask = () => {
 
@@ -18,6 +19,7 @@ const ReduxTask = () => {
 
         }
   return (
+    <ThemeState>
     <div>
       <h1>Redux task page</h1>
 
@@ -47,6 +49,7 @@ const ReduxTask = () => {
         </tbody>
       </table>
     </div>
+    </ThemeState>
   )
 }
 
