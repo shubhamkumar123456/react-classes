@@ -10,6 +10,7 @@ import Multiwork from './pages/Multiwork'
 import ReduxTask from './pages/ReduxTask'
 import AnimationPage from './pages/AnimationPage'
 import AnimationOne from './pages/AnimationOne'
+import Signup from './pages/Signup'
 
 const App = () => {
   const [arr, setarr] = useState([]);
@@ -27,7 +28,7 @@ const App = () => {
       <button onClick={()=>setcount(count+1)}>click me</button> */}
      <BrowserRouter>
         <Routes>
-            <Route path='/' element={<AnimationOne arr={arr} count={count}/>}/>
+            <Route path='/' element={<Signup arr={arr} count={count}/>}/>
             <Route path='/xyz' element={<One abc={abc}/>}/>
             <Route path='/hookPractice' element={<Multiwork/>}/>
             <Route path='/redux' element={<ReduxTask/>}/>
