@@ -1,11 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import userContext from '../context/userContext'
 
 const Login = () => {
     let navigate = useNavigate()
     let emailRef = useRef()
     let passwordRef = useRef()
+
+    let ctx = useContext(userContext);
+    console.log(ctx)
 
    async function handleSubmit(e){
         e.preventDefault()
@@ -30,8 +34,9 @@ const Login = () => {
         console.log(data) // {msg, user}
         if(res.status==200 ){
             toast.success(data.msg)
+            ctx.setLogin(data)
             localStorage.setItem('tasksAuth',JSON.stringify(data.user))
-            navigate('/')
+            // navigate('/')
         }
         else{
             toast.error(data.msg)
